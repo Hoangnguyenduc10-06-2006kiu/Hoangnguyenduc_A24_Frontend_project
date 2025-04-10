@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container-shedule #head-shedule {
+  width: auto;
+  height: 52px;
+  background-color: #1f2937;
+}
+
+#container-shedule #head-shedule #head-shedule-href {
+  width: calc(100vw - 72.5px);
+  height: 52px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+#container-shedule #head-shedule #head-shedule-href #GYM_MANAGEMENT {
+  width: fit-content;
+  height: 28px;
+  position: relative;
+  top: 11.5px;
+  left: 16px;
+  font-weight: 700;
+  font-size: 23.9px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+#container-shedule #head-shedule #head-shedule-href #href {
+  display: flex;
+  gap: 16px;
+}
+
+#container-shedule #head-shedule #head-shedule-href #href a {
+  font-weight: 400;
+  font-size: 18.6px;
+  height: 24px;
+  color: #ffffff;
+  line-height: 52px;
+  gap: 16px;
+  text-decoration: none;
+}
+
+#container-shedule #head-shedule #shedule-box {
+  width: auto;
+  height: 100vh;
+  margin-left: 72.5px;
+  margin-right: 72.5px;
+  position: relative;
+}
+
+#container-shedule #head-shedule #shedule-box #header-shedule-box {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 30.6px;
+  line-height: 32px;
+  position: absolute;
+  top: 32px;
+}
+
+#btn-shedule-new {
+  background-color: rgba(59, 130, 246, 1);
+  color: #ffffff;
+  width: 147.22px;
+  height: 40px;
+  border: transparent;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 19.6px;
+  line-height: 24px;
+}
+
+#content-shedule {
+  position: relative;
+  top: 96px;
+  height: 48.5px;
+  background-color: rgba(229, 231, 235, 1);
+}
+
+table{
+  text-align: left;
+width: 100%;
+}
+

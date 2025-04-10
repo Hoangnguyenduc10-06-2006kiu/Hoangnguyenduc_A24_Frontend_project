@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fafb;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#container-schedule-New {
+  background-color: #f9fafb;
+  padding: 24px;
+  border-radius: 12px;
+  width: 360px;
+}
+
+#container-schedule-New select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+#container-schedule-New #date {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+#container-schedule-New #time {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+#container-schedule-New #btn-form-schedule-new {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+#class-form-schedule-new {
+  color: rgb(16, 13, 13);
+  width: 50px;
+  height: 30px;
+  border: transparent;
+  border-radius: 8px;
+}
+#add-form-schedule-new {
+  background-color: rgba(59, 130, 246, 1);
+  color: white;
+  width: 50px;
+  height: 30px;
+  border: transparent;
+  border-radius: 8px;
+}
+#title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#nameUserTraning #fullname {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+
+#emailUserTraning #emailuser {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}

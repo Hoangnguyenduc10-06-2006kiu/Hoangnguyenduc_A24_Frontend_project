@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>schedule New</title>
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/scheduleNew.css" />
+  </head>
+  <body>
+    <form id="form-schedule">
+      <div id="container-schedule-New">
+        <div id="content-container-schedule-New">
+          <div id="title">Đặt lịch mới</div>
+
+          <div id="class-name">
+            <label for="class-name-value">Lớp học</label><br />
+            <select name="class-name-value" id="class-name-value">
+              <option value="null">Chọn lớp học</option>
+              <option value="Gym">Gym</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Zumba">Zumba</option>
+            </select>
+            <div id="errorClassSheduleNew"></div>
+          </div>
+
+          <div id="traning-day">
+            <label for="date">Chọn ngày tập:</label><br />
+            <input id="date" type="date" />
+            <div id="errorDaySheduleNew"></div>
+          </div>
+
+          <div id="time-traning">
+            <label for="time">Khung giờ</label><br />
+            <select id="time" >
+              <option value="null">Chọn giờ tập</option>
+              <option value="7:00-9:00">7:00-9:00</option>
+              <option value="7:30-9:30">7:30-9:30</option>
+              <option value="8:00-10:00">8:00-10:00</option>
+            </select>
+            <div id="errorTimeSheduleNew"></div>
+          </div>
+
+          <div id="nameUserTraning">
+            <label for="fullname">Họ và tên:</label><br />
+            <input id="fullname" type="input" />
+            <div id="errorNameSheduleNew"></div>
+          </div>
+          <div id="emailUserTraning">
+            <label for="time">Email:</label><br />
+            <input id="emailuser" type="email" />
+            <div id="errorEmailSheduleNew"></div>
+          </div>
+        </div>
+        <div id="btn-form-schedule-new">
+          <button id="class-form-schedule-new">Hủy</button>
+          <button type="submit" id="add-form-schedule-new">Lưu</button>
+        </div>
+      </div>
+    </form>
+    <script type="module" src="../../assets/js/scheduleNew.js"></script>
+  </body>
+</html>

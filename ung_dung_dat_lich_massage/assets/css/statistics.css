@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container-statistics {
+  display: flex;
+}
+
+ #statistics_dashboard {
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(31, 41, 55, 1);
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+}
+
+#statistics-dashboard-content {
+  margin-left: 16px;
+  margin-right: 16px;
+  font-weight: 700;
+  font-size: 20.5px;
+  line-height: 28px;
+}
+
+#option-statistics {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+  position: relative;
+  top: 76px;
+}
+
+#option-statistics button:nth-child(1),
+#option-statistics button:nth-child(2),
+#option-statistics button:nth-child(3) {
+  width: auto;
+  height: 40px;
+  border: transparent;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 19.1px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+}
+
+#log-out-button-statistics {
+  width: auto;
+  height: 40px;
+  border: transparent;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 19.1px;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(248, 113, 113, 1);
+}
+
+#container-statistics{
+  display: flex;
+}
+/* #statistics_management{ 
+  width: 100vw;
+   height: 1336px;
+  margin: 24px 75px 56px 24px;
+  position: relative;
+  background-color: aqua;
+}
+#title-statistics-management{
+    width: fit-content;
+  height: fit-content;
+  font-weight: 700;
+  font-size: 28.7px;
+  line-height: 32px;
+}
+
+#total-number{
+  display: flex;
+  gap: 16px;
+  position: absolute;
+  top: 48px;
+background-color: rgb(28, 41, 41);
+width: 100%;
+}
+#total-number-gym{
+  width:530px ;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 1);
+}
+#total-number-yoga{
+  width:530px ;
+  height: 120px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#total-number-zumba{
+  width:530px ;
+  height: 120px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#bl{
+  width: 100%;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 1059px;
+} */

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css">
+  </head>
+  <body>
+    <form id="form-login">
+      <div id="container-login">
+        <div id="title-login"><p>Đăng nhập</p></div>
+
+        <div id="log-in">
+          <div id="box-email">
+            <label id="email-labei" for="email-input">Email:</label><br />
+            <input id="email-input" type="email" />
+            <div id="error_email_log_in"></div>
+            <br />
+          </div>
+
+          <div id="box-password">
+            <label for="password-input">Mật khẩu:</label><br />
+            <input id="password-input" type="password" />
+            <div id="error_password_log_in"></div>
+          </div>
+
+          <div id="btn-log-in">
+            <button id="button-log-in">
+              <div id="button-log-in-value">Đăng Nhập</div>
+            </button>
+          </div>
+        </div>
+
+        <div id="no-account">
+          Chưa có tài khoản?
+          <a href="./register.html">Đăng ký ngay</a>
+        </div>
+      </div>
+    </form>
+     <script src="../.././assets/js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css">
+  </head>
+  <body>
+    <form id="form-register">
+      <div id="container-register">
+        <div id="title-register"><p>Đăng ký tài khoản</p></div>
+
+        <div id="box-register">
+          <div id="box-register-fullname">
+            <label id="register-fullname-labei" for="register-fullname-input"
+              >Họ và tên:</label
+            ><br />
+            <input id="register-fullname-input" type="text" />
+            <div id="error-fullname-register"></div>
+            <br />
+          </div>
+
+          <div id="box-register-email">
+            <label id="register-email-labei" for="register-email-input"
+              >Email:</label
+            ><br />
+            <input id="register-email-input" type="email" />
+            <div id="error-email-register"></div><br />
+          </div>
+
+          <div id="box-register-password">
+            <label id="register-password-labei" for="register-password-input"
+              >Mật khẩu:</label
+            ><br />
+            <input id="register-password-input" type="password" />
+            <div id="error_password_register"></div>
+          </div>
+
+          <div id="box-register-password-confirm">
+            <label for="register-password-labei-confirm"
+              >Xác nhận mật khẩu:</label
+            ><br />
+            <input id="register-password-confirm-input" type="password" />
+            <div id="error_password_confirm_register"></div>
+          </div>
+
+          <div id="btn-register">
+            <button type="submit" id="button-register">
+              <div id="button-register-value">Đăng ký</div>
+            </button>
+          </div>
+        </div>
+
+        <div id="yes-account">
+          Đã có tài khoản?
+          <a href="./login.html">Đăng Nhập ngay</a>
+        </div>
+      </div>
+    </form>
+    <script src="../.././assets/js/auth.js"></script>
+  </body>
+</html>
