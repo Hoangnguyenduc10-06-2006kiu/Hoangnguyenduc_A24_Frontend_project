@@ -1,16 +1,16 @@
 let localBooking = JSON.parse(localStorage.getItem("booking")) || [];
 // phần gọi phần tử
-let newNameEdit=document.getElementById("edit-name") ;
-let newEmailEdit=document.getElementById ("edit-email");
-let newTimeEdit=document.getElementById("edit-time");
-let newDateEdit=document.getElementById("edit-date");
-let newClassEdit=document.getElementById("edit-class")
+let newNameEdit = document.getElementById("edit-name");
+let newEmailEdit = document.getElementById("edit-email");
+let newTimeEdit = document.getElementById("edit-time");
+let newDateEdit = document.getElementById("edit-date");
+let newClassEdit = document.getElementById("edit-class");
 let btn_shedule_new = document.querySelector("#btn-shedule-new");
 let tbodyListUserBooking = document.querySelector("#tbodyListUserBooking");
 // phần gắn sự kiện
-btn_shedule_new.addEventListener("click", function () {
-  window.location.href = "../../pages/booking/scheduleNew.html";
-});
+// btn_shedule_new.addEventListener("click", function () {
+//   window.location.href = "../../pages/booking/scheduleNew.html";
+// });
 
 //phần  hàm
 function renderListUserBooking() {
@@ -79,7 +79,7 @@ function renderListUserBooking() {
   </div>
 </div>
       
-<!-- Button trigger modal -->
+<!-- Button delete -->
 <button type="button" class="delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
  Xóa
 </button>
@@ -121,4 +121,4 @@ function handledelette(index) {
 }
 
 // //phần gọi hàm
- renderListUserBooking();
+renderListUserBooking();

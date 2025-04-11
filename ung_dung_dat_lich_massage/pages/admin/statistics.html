@@ -32,12 +32,54 @@
             <div id="total-number-yoga">Tổng số lịch Yoga</div>
             <div id="total-number-zumba">Tổng số lịch Zumba</div>
           </div>
-          <div id=""></div>
-          <div id="fiter">
-            <div></div>
-            <div></div>
+          <div id="numberOfBookings"></div>
+
+          <div id="filter">
+            <div id="titleFillter">Bộ lọc</div>
+
+            <div id="boxContentFilter">
+              <div id="contentFilter">
+                <label for="filterClass">Lớp học</label><br />
+                <select id="filterClass">
+                  <option value="all">Tất cả</option>
+                  <option value="gym">Gym</option>
+                  <option value="yoga">Yoga</option>
+                  <option value="zumba">Zumba</option>
+                </select>
+              </div>
+              <div id="contentFilter">
+                <label for="filterEmail">Email</label><br />
+                <input id="filterEmail" type="email" />
+              </div>
+              <div id="contentFilter">
+                <label for="filterDayTraning">Ngày tập</label><br />
+                <input
+                  type="date"
+                  name="filterDayTraning"
+                  id="filterDayTraning"
+                />
+              </div>
+            </div>
           </div>
-          <div></div>
+
+          <div id="renderContentFilter">
+            <div id="valueRenderContentFilter">
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th id="th1">Lớp học</th>
+                    <th id="th2">Ngày tập</th>
+                    <th id="th3">Khung giờ</th>
+                    <th id="th3">Họ tên</th>
+                    <th id="th3">Email</th>
+                    <th id="th4">Thao tác</th>
+                  </tr>
+                </thead>
+
+                <tbody id="tbodyListUserBooking"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -143,7 +143,6 @@ form_register.addEventListener("submit", function (event) {
       window.location.href = "login.html";
     }
   } else {
-    console.log(local_user);
     check_Email_form_register = "off";
     check_Fullname_form_register = "off";
     check_Password_form_register = "off";

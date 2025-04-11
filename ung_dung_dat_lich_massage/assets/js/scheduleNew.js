@@ -1,4 +1,9 @@
-let checkValidateFormSchedule = "off";
+let checkValidateClassSchedule = "off";
+let checkValidateDaySchedule = "off";
+let checkValidateTimeSchedule = "off";
+let checkValidateFullNameSchedule = "off";
+let checkValidateEmailSchedule = "off";
+
 let classNameValue = document.querySelector("#class-name-value");
 
 let traningDay = document.querySelector("#date");
@@ -22,55 +27,61 @@ let localBooking = JSON.parse(localStorage.getItem("booking")) || [];
 let local_user = JSON.parse(localStorage.getItem("users")) || [];
 
 formSchedule.addEventListener("submit", function (e) {
-  e.preventDefault();
   //validate class
   if (classNameValue.value === "null" || classNameValue.value === "") {
     errorClassSheduleNew.textContent = "Không được bỏ trống !!!";
     errorClassSheduleNew.style.color = "red";
-    checkValidateFormSchedule = "off";
+    checkValidateClassSchedule = "off";
   } else {
     errorClassSheduleNew.textContent = "";
-    checkValidateFormSchedule = "on";
+    checkValidateClassSchedule = "on";
   }
   //validate day
   if (traningDay.value === "null" || traningDay.value === "") {
     errorDaySheduleNew.textContent = "Không được bỏ trống !!!";
     errorDaySheduleNew.style.color = "red";
-    checkValidateFormSchedule = "off";
+    checkValidateDaySchedule = "off";
   } else {
     errorDaySheduleNew.textContent = "";
-    checkValidateFormSchedule = "on";
+    checkValidateDaySchedule = "on";
   }
   //validat time
   if (timeTraning.value === "null" || timeTraning.value === "") {
     errorTimeSheduleNew.textContent = "Không được bỏ trống !!!";
     errorTimeSheduleNew.style.color = "red";
-    checkValidateFormSchedule = "off";
+    checkValidateTimeSchedule = "off";
   } else {
     errorTimeSheduleNew.textContent = "";
-    checkValidateFormSchedule = "on";
+    checkValidateTimeSchedule = "on";
   }
   //validate fullname
   if (nameUserTraning.value === "null" || nameUserTraning.value === "") {
     errorNameSheduleNew.textContent = "Không được bỏ trống !!!";
     errorNameSheduleNew.style.color = "red";
-    checkValidateFormSchedule = "off";
+    checkValidateFullNameSchedule = "off";
   } else {
     errorNameSheduleNew.textContent = "";
-    checkValidateFormSchedule = "on";
+    checkValidateFullNameSchedule = "on";
   }
   //validate email
   if (emailUserTraning.value === "null" || emailUserTraning.value === "") {
     errorEmailSheduleNew.textContent = "Không được bỏ trống !!!";
     errorEmailSheduleNew.style.color = "red";
-    checkValidateFormSchedule = "off";
+    checkValidateEmailSchedule = "off";
   } else {
     errorEmailSheduleNew.textContent = "";
-    checkValidateFormSchedule = "on";
+    checkValidateEmailSchedule = "on";
   }
 
   //validate locals
-  if (checkValidateFormSchedule === "on") {
+  if (
+    (checkValidateClassSchedule =
+      "on" &&
+      checkValidateDaySchedule === "on" &&
+      checkValidateTimeSchedule === "on" &&
+      checkValidateFullNameSchedule === "on" &&
+      checkValidateEmailSchedule === "on")
+  ) {
     let findUserId = local_user.find(
       (user) =>
         emailUserTraning.value === user.userEmail &&
@@ -82,8 +93,8 @@ formSchedule.addEventListener("submit", function (e) {
     let listBookingUser = {
       idBooking: Math.ceil(Math.random() * 100000),
       userId: findUserId.userId, // ID người đặt
-      nameUser:nameUserTraning.value,
-      emailUser:emailUserTraning.value,
+      nameUser: nameUserTraning.value,
+      emailUser: emailUserTraning.value,
       className: classNameValue.value,
       classId: "null", // ID lớp học
       date: traningDay.value, // Ngày đặt (YYYY-MM-DD)
@@ -94,11 +105,8 @@ formSchedule.addEventListener("submit", function (e) {
     };
     localBooking.push(listBookingUser);
     localStorage.setItem("booking", JSON.stringify(localBooking));
-    console.log("findUserId", findUserId);
-
-    alert("đặt lịch  thành công");
-    window.location.href="../../pages/booking/schedule.html"
+    // alert("đặt lịch  thành công");
   } else {
-    alert("đặt lịch không thành công");
+    // alert("đặt lịch không thành công");
   }
 });

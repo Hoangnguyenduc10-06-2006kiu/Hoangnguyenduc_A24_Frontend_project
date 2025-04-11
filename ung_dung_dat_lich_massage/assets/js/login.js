@@ -62,7 +62,6 @@ form_log_in.addEventListener("submit", function (event) {
         password_input.value === admin.userPassword &&
         admin.role === "admin"
     );
-    console.log(find_admin);
 
     if (find_admin) {
       window.location.href = "../../pages/admin/statistics.html";
