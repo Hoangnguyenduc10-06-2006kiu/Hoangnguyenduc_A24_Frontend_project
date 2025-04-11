@@ -15,14 +15,14 @@ email_input.addEventListener("input", function () {
   if (!email_input.value) {
     error_email_log_in.textContent = "Không được bỏ trống Email !!!";
     error_email_log_in.style.color = "red";
-    check_form_login='on'
+    check_form_login = "on";
   } else if (!email_input.value.includes("@gmail.com")) {
     error_email_log_in.textContent = "Email phải có '@gmail.com'";
     error_email_log_in.style.color = "red";
-        check_form_login = "on";
+    check_form_login = "on";
   } else {
     error_email_log_in.textContent = "";
-        check_form_login = "off";
+    check_form_login = "off";
   }
 });
 
@@ -30,15 +30,11 @@ password_input.addEventListener("input", function () {
   if (!password_input.value) {
     error_password_log_in.textContent = "Không được bỏ trống Mật khẩu !!!";
     error_password_log_in.style.color = "red";
-
   } else if (password_input.value.length < 8) {
     error_password_log_in.textContent = "Mật khẩu phải có ít nhất 8 kí tự";
     error_password_log_in.style.color = "red";
-
   } else {
     error_password_log_in.textContent = "";
-
-
   }
 });
 
@@ -58,10 +54,23 @@ form_log_in.addEventListener("submit", function (event) {
   );
   if (!find_user) {
     alert("Email hoặc mật khẩu bạn không đúng!");
+    email_input.value = "";
   } else {
-    window.location.href = "../../pages/home/home.html";
+    let find_admin = local_user.find(
+      (admin) =>
+        email_input.value === admin.userEmail &&
+        password_input.value === admin.userPassword &&
+        admin.role === "admin"
+    );
+    console.log(find_admin);
+
+    if (find_admin) {
+      window.location.href = "../../pages/admin/statistics.html";
+      email_input.value = "";
+    } else {
+      window.location.href = "../../pages/home/home.html";
+      email_input.value = "";
+    }
   }
   //hiển thị thông báo cho người dung
 });
-
-

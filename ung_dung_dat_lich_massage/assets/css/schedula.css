@@ -90,3 +90,9 @@ table{
 width: 100%;
 }
 
+.delete {
+  background-color: rgb(17, 173, 173);
+}
+.confirmDelete{
+  
+}

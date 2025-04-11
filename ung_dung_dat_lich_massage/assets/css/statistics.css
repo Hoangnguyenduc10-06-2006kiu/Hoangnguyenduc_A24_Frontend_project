@@ -6,6 +6,7 @@
 
 #container-statistics {
   display: flex;
+  background-color: rgba(243, 244, 246, 1);
 }
 
  #statistics_dashboard {
@@ -58,10 +59,40 @@
   text-align: left;
   color: rgba(248, 113, 113, 1);
 }
-
-#container-statistics{
-  display: flex;
+#title-statistics-management{
+  width: fit-content;
+  height: 32px;
+  margin: 24px;
+  font-weight: 700;
+  font-size:29.1px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 1);
 }
+#statistics_management{
+  width: 100vh;
+}
+#statistics_management_value{
+  background-color: aqua;
+}
+#total-number{
+  display: flex;
+  height: 120px;
+  gap: 16px;
+}
+#total-number div{
+  background-color: rgba(255, 255, 255, 1);
+  border: transparent;
+  border-radius: 8px;
+  width: 530px;
+  height:120px ;
+  font-weight: 600;
+  font-size:20.7px ;
+  line-height: 28px;
+  padding: 24px;
+  margin-left: 24px;
+
+}
+
 /* #statistics_management{ 
   width: 100vw;
    height: 1336px;

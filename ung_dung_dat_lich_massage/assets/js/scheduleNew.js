@@ -15,7 +15,7 @@ let errorDaySheduleNew = document.querySelector("#errorDaySheduleNew");
 let errorTimeSheduleNew = document.querySelector("#errorTimeSheduleNew");
 let errorNameSheduleNew = document.querySelector("#errorNameSheduleNew");
 let errorEmailSheduleNew = document.querySelector("#errorEmailSheduleNew");
-
+let closeFormScheduleNew = document.querySelector("#close-form-schedule-new");
 let formSchedule = document.querySelector("#form-schedule");
 
 let localBooking = JSON.parse(localStorage.getItem("booking")) || [];
@@ -77,7 +77,7 @@ formSchedule.addEventListener("submit", function (e) {
         nameUserTraning.value === user.userName
     );
     if (!findUserId) {
-      alert("id ko tìm thấy!");
+      alert("khongo tìm thấy người này");
     }
     let listBookingUser = {
       idBooking: Math.ceil(Math.random() * 100000),
