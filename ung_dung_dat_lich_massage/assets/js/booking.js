@@ -7,6 +7,79 @@ let newDateEdit = document.getElementById("edit-date");
 let newClassEdit = document.getElementById("edit-class");
 let btn_shedule_new = document.querySelector("#btn-shedule-new");
 let tbodyListUserBooking = document.querySelector("#tbodyListUserBooking");
+let closeformelement = document.querySelector("#btn-close");
+let btntonpageselement = document.querySelector("#btnpages");
+let btnprev = document.querySelector("#btn-prev");
+let btnnext = document.querySelector("#btn-next");
+//--------------------------------------------------//
+//tao ra cac bien toan cuc
+let curenpage = 1;
+let totalperpages = 5; // bien tong so hs tren 1 trang
+//tong so trang
+let totalpages = Math.ceil(localBooking.length / totalperpages); //4
+
+let renderpage = () => {
+  //clear ket qua cua lan render trc ddaay
+  btntonpageselement.textContent = "";
+
+  //hien thi ra tung nut
+  for (let i = 1; i <= totalpages; i++) {
+    //tao tung buton
+    let btnelement = document.createElement("button");
+
+    //gan tieu de cho nut
+    btnelement.textContent = i;
+
+    //kiem tra button nao dang dc active
+    if (curenpage === i) {
+      btnelement.classList.add("btn-active");
+    }
+
+    //disable nut prev khi dang hien thi trang 1
+    if (curenpage === 1) {
+      btnprev.setAttribute("disabled", "disabled");
+    } else {
+      btnprev.removeAttribute("disabled");
+    }
+
+    //disable nut prev khi dang hien thi trang 1
+    if (curenpage === totalpages) {
+      btnnext.setAttribute("disabled", "disabled");
+    } else {
+      btnnext.removeAttribute("disabled");
+    }
+
+    //add sk khi click vao nut
+    btnelement.addEventListener("click", function () {
+      curenpage = i;
+      renderpage();
+      renderListUserBooking();
+    });
+
+    //gan button vao id but-pages
+    btntonpageselement.appendChild(btnelement);
+  }
+};
+
+btnprev.addEventListener("click", function () {
+  //khi bam vao nut prev se tang curenpage len 1 don vi
+  if (curenpage > 1) {
+    curenpage--;
+    renderpage();
+    renderListUserBooking();
+  }
+});
+
+btnnext.addEventListener("click", function () {
+  //khi bam vao nut prev se giam curenpage  1 don vi
+  if (curenpage <= totalperpages) {
+    curenpage++;
+    renderpage();
+    renderListUserBooking();
+  }
+});
+renderpage();
+
 // phần gắn sự kiện
 // btn_shedule_new.addEventListener("click", function () {
 //   window.location.href = "../../pages/booking/scheduleNew.html";
@@ -14,7 +87,10 @@ let tbodyListUserBooking = document.querySelector("#tbodyListUserBooking");
 
 //phần  hàm
 function renderListUserBooking() {
-  let listBooking = localBooking.map((user, index) => {
+  let star = (curenpage - 1) * totalperpages; // tong so trang tru 1 nhan voi so phan tu xuat hien trong 1 trang
+  let end = totalperpages * curenpage; //so phan tu xuat hien trong 1 trang nhan voi tongso trang
+  let listBookingslice = localBooking.slice(star, end);
+  let listBooking = listBookingslice.map((user, index) => {
     return ` <tr>
     <td>${user.className}</td>
     <td>${user.date}</td>
@@ -110,13 +186,18 @@ function renderListUserBooking() {
   tbodyListUserBooking.innerHTML = converArraytoString;
 }
 
-function handledelette(index) {
-  //xoa con vc khoi mang
-  localBooking.splice(index, 1);
+function handledelette(indexInPage) {
+  const start = (curenpage - 1) * totalperpages;
+  const realIndex = start + indexInPage;
 
-  //luu thong tin local
+  localBooking.splice(realIndex, 1);
+
   localStorage.setItem("booking", JSON.stringify(localBooking));
-  //render lai
+
+  totalpages = Math.ceil(localBooking.length / totalperpages);
+  if (curenpage > totalpages) curenpage = totalpages;
+
+  renderpage();
   renderListUserBooking();
 }
 

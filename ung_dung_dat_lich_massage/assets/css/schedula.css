@@ -85,9 +85,9 @@
   background-color: rgba(229, 231, 235, 1);
 }
 
-table{
+table {
   text-align: left;
-width: 100%;
+  width: 100%;
 }
 
 .delete {
@@ -95,8 +95,6 @@ width: 100%;
 }
 
 /* ////////////////////////////////////////// */
-
-
 
 #container-schedule-New select {
   width: 100%;
@@ -146,4 +144,19 @@ width: 100%;
   margin-top: 4px;
   margin-bottom: 16px;
   border-radius: 6px;
+}
+
+.btn-active {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+}
+#switchPage {
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+#btnpages button{
+  width: 30px;
+  height: 30px;
 }

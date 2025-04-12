@@ -30,6 +30,8 @@ let error_password_register = document.querySelector(
 let error_password_confirm_register = document.querySelector(
   "#error_password_confirm_register"
 );
+let modalNewUser = new bootstrap.Modal(document.querySelector("#modalNewUser"));
+let nextLogin = document.querySelector("#nextLogin");
 
 let local_user = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -131,17 +133,19 @@ form_register.addEventListener("submit", function (event) {
     localStorage.setItem("users", JSON.stringify(local_user));
     register_fullname_input.value = "";
     register_email_input.value = "";
+    register_password_input.value = "";
+    register_password_confirm_input.value = "";
 
-    let userConfirm = confirm(
-      "Bạn đã tạo tài khoản thành công. Bạn có chắc chắn muốn tiếp tục đăng nhập không?"
-    );
+    modalNewUser.show();
+    console.log(modalNewUser);
+
     check_Email_form_register = "off";
     check_Fullname_form_register = "off";
     check_Password_form_register = "off";
     check_Confirm_Password_form_register = "off";
-    if (userConfirm) {
+    nextLogin.addEventListener("click", function () {
       window.location.href = "login.html";
-    }
+    });
   } else {
     check_Email_form_register = "off";
     check_Fullname_form_register = "off";

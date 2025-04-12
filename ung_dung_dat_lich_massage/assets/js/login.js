@@ -10,7 +10,9 @@ let email_input = document.querySelector("#email-input");
 let password_input = document.querySelector("#password-input");
 
 let form_log_in = document.querySelector("#form-login");
-
+let modalLoginFail = new bootstrap.Modal(
+  document.querySelector("#modalLoginFail")
+);
 email_input.addEventListener("input", function () {
   if (!email_input.value) {
     error_email_log_in.textContent = "Không được bỏ trống Email !!!";
@@ -53,8 +55,9 @@ form_log_in.addEventListener("submit", function (event) {
       password_input.value === user.userPassword
   );
   if (!find_user) {
-    alert("Email hoặc mật khẩu bạn không đúng!");
+    modalLoginFail.show();
     email_input.value = "";
+    password_input.value = "";
   } else {
     let find_admin = local_user.find(
       (admin) =>

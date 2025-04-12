@@ -2,3 +2,14 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+ button{
+  cursor: pointer;
+   transition: all 0.3s linear;
+ }
+
+ button:hover {
+  filter: brightness(90%);
+}
+button:focus {
+  filter: brightness(70%);
+}

@@ -153,3 +153,20 @@ table{
 width: 100%;
 }
 
+.btn-active {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+}
+#switchPage {
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+}
+#btnpages button{
+  width: 30px;
+  height: 30px;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
